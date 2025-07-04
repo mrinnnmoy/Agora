@@ -1,13 +1,24 @@
 import React from 'react';
-import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from './components/Footer';
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div>
-      <ConnectButton />
-    </div>
+    <>
+      <Navbar />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+
+      <Footer />
+    </>
   )
 };
 
